@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- first program which we are learning  -->
+    <div id="root">
+
+    </div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <script>
+        // create h1 Tag
+        // React.createElement()
+
+        // create an element is the core of React
+        const heading=React.createElement('h1',{id:"title"},"Hello World Program-React")
+
+        //we want to render the heading inside the root
+        // create an Root is the core thing of ReactDOM
+        const root=ReactDOM.createRoot(document.getElementById('root'))
+        root.render(heading)
+
+    </script>
+</body>
+</html>

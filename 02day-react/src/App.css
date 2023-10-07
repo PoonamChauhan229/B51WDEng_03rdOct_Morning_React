@@ -1,0 +1,41 @@
+.profile-pic{
+  width:200px;
+  height:200px;
+}
+.border{
+  border:1px solid navy;
+}
+/* .App{
+  display: flex;
+  flex-wrap: wrap;
+  gap:10px;
+  text-align: center;
+  padding-left:100px;
+  padding-top:10px;
+} */
+.movieContainer{
+  height:450px;
+  width:220px;
+  /* margin:2%; */
+  border:1px solid red;
+}
+.moviePoster{
+  height:300px;
+  width:220px;
+}
+*{
+  margin:0;
+  padding:0;
+}
+.movieSpecs{
+  display: flex;
+  justify-content: space-between;
+  padding:4px;
+}
+.movieSummary{
+  font-size: 14px;
+  overflow:hidden;
+  height:95px;
+  padding:4px;
+
+}
