@@ -1,7 +1,8 @@
 import { useState } from "react";
 import SpecialButton from "./SpecialButton";
+import { useNavigate } from "react-router-dom";
 
-const MovieCard = ({ name, poster, rating, summary ,cart,setCart}) => {
+const MovieCard = ({ name, poster, rating, summary ,cart,setCart,id}) => {
  // console.log(name, poster, rating, summary);
 //  console.log(cart)
 const [show,setShow]=useState(false)
@@ -27,6 +28,11 @@ const movieRating={
 const displaySummary={
   display:show?"block":"none"
 }
+
+ // UseNavigate
+ const navigate=useNavigate()
+
+
   return (
     <>
       <div className="movieContainer">
@@ -42,14 +48,19 @@ const displaySummary={
               setShow(!show)
             }}
             //  conditional rendering of emojis
-            >🔼🔽</button>
-            <span><button
+            >
+            {show?"🔽":"🔼"}
+            
+            
+            </button>
+            <span>
+            <button
             onClick={()=>{
               // setCart(cart+1)
                                
                 // setBtnText("Remove from Cart")
                  btnText=="Add to Cart"?setBtnText("Remove from Cart"):setBtnText("Add to Cart")    
-                 console.log(btnText)
+                // console.log(btnText)
 
                  // cart value
                 btnText=="Add to Cart"?setCart(cart+1):setCart(cart-1)              
@@ -58,6 +69,13 @@ const displaySummary={
             >
             {btnText=="Add to Cart"?"Add to Cart":"Remove From Cart"}</button></span>
             <span><SpecialButton /></span>
+          </span>
+          <span>
+            {/* info of movie : video trailer + movie name+ summary */}
+            <button
+            onClick={()=>navigate(`/movies/${id}`)}
+            
+            >Info</button>
           </span>
         </div>
         {/* {show && <p className="movieSummary">{summary}</p>} */}

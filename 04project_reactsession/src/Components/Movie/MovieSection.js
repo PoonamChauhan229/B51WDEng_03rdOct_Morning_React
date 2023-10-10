@@ -1,18 +1,28 @@
 import MovieCard from "./MovieCard"
-import { movie } from "../../utils/constants"
+import AddMovie from "./AddMovie"
 
-const MovieSection=({cart,setCart})=>{
-//console.log(cart,setCart)
+const MovieSection=({cart,setCart,movieList,setMovieList})=>{
+//console.log(cart,movieList)
     return(
+
+    <>
+    <AddMovie  movieList={movieList}
+        setMovieList={setMovieList}/>
+ 
     <div className="movieSection">
+        
+
     {
-        movie.map((element)=>(
-            <MovieCard {...element} cart={cart} setCart={setCart}/>
+        movieList.map((element,index)=>(
+            <MovieCard key={index} {...element} cart={cart} setCart={setCart}
+            id={index}
+            />
         ))
     }
 
         
     </div>
+    </>
         
     )
 }
