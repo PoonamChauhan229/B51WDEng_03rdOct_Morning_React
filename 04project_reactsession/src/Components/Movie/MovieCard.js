@@ -2,11 +2,12 @@ import { useState } from "react";
 import SpecialButton from "./SpecialButton";
 import { useNavigate } from "react-router-dom";
 
-const MovieCard = ({ name, poster, rating, summary ,cart,setCart,id}) => {
+const MovieCard = ({ name, poster, rating, summary ,cart,setCart,id,deleteButton,editButton}) => {
  // console.log(name, poster, rating, summary);
 //  console.log(cart)
 const [show,setShow]=useState(false)
 const [btnText,setBtnText]=useState("Add to Cart")
+// console.log(id)
 
 //show=>true => text should be visible
 // show=> false => text should not visibile
@@ -76,6 +77,11 @@ const displaySummary={
             onClick={()=>navigate(`/movies/${id}`)}
             
             >Info</button>
+          </span>
+          <span>
+            {editButton}
+            {deleteButton}
+            
           </span>
         </div>
         {/* {show && <p className="movieSummary">{summary}</p>} */}

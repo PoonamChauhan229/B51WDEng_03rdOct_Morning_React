@@ -1,29 +1,29 @@
 
 import { useEffect, useState } from 'react';
 import './App.css';
-import Navbar from './Components/Navbar';
 import MovieSection from './Components/Movie/MovieSection';
 import ColorSection from './Components/Color/ColorSection';
 import { Route, Routes } from 'react-router-dom';
 import { movie } from './utils/constants';
 import MovieInfo from './Components/Movie/MovieInfo';
+import AddMovie from './Components/Movie/AddMovie';
+import EditForm from './Components/Movie/EditForm';
+import NavbarMUI from './Components/NavbarMUI';
+import RecipeReviewCard from './Components/check';
 
 
 function App() {
   const [cart,setCart]=useState(0)
-  const [movieList,setMovieList]=useState(movie)
 //  console.log(movieList)
-  // useEfffect
+  // useEfffect => cbk function and a dependancy array
 
-  useEffect(()=>{
-    console.log("initial Render")
-    const res1=fetch('https://restcountries.com/v2/all').then(res=>console.log(res))
-    // API calls
-  },[cart])
+ 
   return (    
     <>
     {/* display */}
-    <Navbar cart={cart}/>
+    {/* <Navbar cart={cart}/> */}
+    <NavbarMUI cart={cart}/>
+    <RecipeReviewCard/>
 
     {/* add the functionality */}
     
@@ -32,13 +32,13 @@ function App() {
 
     
     <Routes>
-        <Route path="/"  element={<MovieSection cart={cart} setCart={setCart} movieList={movieList}
-        setMovieList={setMovieList}
-        
+        <Route path="/"  element={<MovieSection cart={cart} setCart={setCart}  
         />}/>
         <Route path='/addcolor' element={<ColorSection/>}/>
 
-        <Route path='/movies/:id' element={<MovieInfo movieList={movieList}/>}/>
+        <Route path='/movies/:id' element={<MovieInfo />}/>
+        <Route path='/addmovie' element={<AddMovie/>}/>
+        <Route path='/edit/:id' element={<EditForm/>}/>
     </Routes> 
     </> 
     
@@ -46,3 +46,4 @@ function App() {
 }
 
 export default App;
+

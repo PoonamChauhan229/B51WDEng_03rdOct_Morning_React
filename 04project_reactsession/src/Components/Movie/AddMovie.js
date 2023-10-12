@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import Button from '@mui/material/Button';
+
 
 const AddMovie=({movieList,setMovieList})=>{
     //console.log(movieList,setMovieList)
@@ -7,8 +9,19 @@ const AddMovie=({movieList,setMovieList})=>{
     const [name,setName]=useState("")
     const [rating,setRating]=useState("")
     const [summary,setSummary]=useState("")
-
-
+    const navigate=useNavigate()
+    const addToMovieList=()=>{
+        const movie={poster,name,rating,summary}
+        console.log(movie)
+        // API call
+        fetch(`https://65111d14829fa0248e3f850c.mockapi.io/movies`,{
+            method:"POST",
+            body:JSON.stringify(movie),
+            headers:{
+                "Content-Type":"application/json"
+            }
+        }).then(navigate('/'))
+    }
    
     return(
         <div style={{marginBottom:"10px"}}>
@@ -38,14 +51,12 @@ const AddMovie=({movieList,setMovieList})=>{
 
         <br/>
         <button
-        onClick={()=>{
-        const movie={poster,name,rating,summary}
-        //console.log(movie)
-        setMovieList([...movieList,movie])
-            
-        }}
+        onClick={()=>addToMovieList()}
         
         >Add Movie</button>
+
+        <Button variant="contained">Add Movie</Button>
+
     </div>
     )
 }

@@ -18,9 +18,11 @@ const Navbar=({cart})=>{
                     <Link to='/'>MoviesFlix</Link>
                 </div>
                 <div>Cart {cart}</div>
-                <div>
-                
+                <div>                
                 <Link to='/addcolor'>Add Color</Link>
+                </div>
+                <div>                
+                <Link to='/addmovie'>Add Movie</Link>
                 </div>
             </div> 
         </div>
