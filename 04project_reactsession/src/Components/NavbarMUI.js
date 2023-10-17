@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 
 // const navItems = ['Home', 'AddMovie', 'AddColor','Cart'];
 
-function NavbarMUI({cart}) {
+function NavbarMUI({cart,mode,setMode}) {
 const navigate=useNavigate()
  return (
     <Box sx={{ display: 'flex',padding:0,marginBottom:10}}>
@@ -45,7 +45,13 @@ const navigate=useNavigate()
             <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/addmovie')}>AddMovie</Button>
             <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/addcolor')}>AddColor</Button>
             <Button  sx={{ color: '#fff' }}>Cart{cart}</Button>
-          
+            <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/tictactoe')}>TicTacToe Game</Button>
+            <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/propdrilling')}>PropDrilling-Theme</Button>
+            <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/useContext')}>UseContext-Theme</Button>
+            
+            <Button  sx={{ color: '#fff' }} onClick={()=>{setMode(mode=="light"?"dark":"light")}}>{mode}Mode</Button>
+
+            
           </Box>
         </Toolbar>
       </AppBar>   

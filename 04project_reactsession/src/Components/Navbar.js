@@ -24,6 +24,7 @@ const Navbar=({cart})=>{
                 <div>                
                 <Link to='/addmovie'>Add Movie</Link>
                 </div>
+                
             </div> 
         </div>
         </>

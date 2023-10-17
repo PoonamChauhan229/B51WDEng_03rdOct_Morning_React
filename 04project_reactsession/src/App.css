@@ -47,3 +47,36 @@ button{
   color:white;
 
 }
+
+/* Game */
+
+.gamebox{
+  height:80px;
+  width:80px;
+  border:1px solid black;
+  font-size: 50px;
+  text-align:center ;
+  
+}
+.board{
+  width:240px;
+  border:1px solid red;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin:0 auto;
+}
+.winner{
+  margin:0 auto;
+  width:240px;
+  color:green
+}
+.gamebox:hover{
+  background-color: grey;
+}
+.themebox{
+  height:300px;
+  border:1px solid black;
+  width:500px;
+  margin:40px;
+  padding: 30px;
+}

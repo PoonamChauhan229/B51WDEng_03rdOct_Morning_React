@@ -50,10 +50,11 @@ const displaySummary={
             }}
             //  conditional rendering of emojis
             >
-            {show?"🔽":"🔼"}
-            
+            {show?"🔽":"🔼"}            
             
             </button>
+
+
             <span>
             <button
             onClick={()=>{
@@ -68,9 +69,13 @@ const displaySummary={
                 
             }}
             >
-            {btnText=="Add to Cart"?"Add to Cart":"Remove From Cart"}</button></span>
+            {btnText=="Add to Cart"?"Add to Cart":"Remove From Cart"}</button>
+            </span>
             <span><SpecialButton /></span>
           </span>
+
+
+
           <span>
             {/* info of movie : video trailer + movie name+ summary */}
             <button

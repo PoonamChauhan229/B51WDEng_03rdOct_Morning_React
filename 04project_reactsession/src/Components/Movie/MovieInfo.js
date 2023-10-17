@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import axios from 'axios'
 
 const MovieInfo=()=>{
     //returns an object
@@ -10,12 +11,26 @@ const MovieInfo=()=>{
     useEffect(()=>getMovieById(),[])
     const {name,summary,trailer}=movie
 
-    const getMovieById=()=>{
-      fetch(`https://65111d14829fa0248e3f850c.mockapi.io/movies/${id}`)
-      .then((data)=>data.json())
-      .then((res)=> setMovie(res))
+    // Fetch 
+    // const getMovieById=()=>{
+    //   fetch(`https://65111d14829fa0248e3f850c.mockapi.io/movies/${id}`)
+    //   .then((data)=>data.json())
+    //   .then((res)=> setMovie(res))
+    // }
+
+    // Axios
+    async function getMovieById() {
+      try {
+        const response = await axios.get(`https://65111d14829fa0248e3f850c.mockapi.io/movies/${id}`);
+        console.log(response.data);
+        setMovie(response.data)
+      } catch (error) {
+        console.error(error);
+      }
     }
-    
+    useEffect(()=>{
+      getMovieById()
+    },[])
     console.log(movie)
     const navigate=useNavigate()
 

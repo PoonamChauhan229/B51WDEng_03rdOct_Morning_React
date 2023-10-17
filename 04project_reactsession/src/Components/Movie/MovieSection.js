@@ -3,6 +3,12 @@ import AddMovie from "./AddMovie"
 import { useEffect, useState } from "react"
 import { movie } from "../../utils/constants"
 import { useNavigate } from "react-router-dom"
+import MovieCardMUI from "./MovieCardMUI"
+import EditIcon from '@mui/icons-material/Edit';
+import IconButton from '@mui/material/IconButton';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+
+
 
 const MovieSection=({cart,setCart})=>{
  const navigate=useNavigate()
@@ -34,16 +40,34 @@ useEffect(()=>{
 
     {
         movieList?.map((element,index)=>(
-            <MovieCard key={index} {...element} cart={cart} setCart={setCart}
-            id={element.id}
+          <MovieCardMUI key={index} {...element} cart={cart} setCart={setCart}
+          id={element.id}
+            // <MovieCard key={index} {...element} cart={cart} setCart={setCart}
+            // id={element.id}
 
-            deleteButton={<button
-            onClick={()=>deleteMovie(element.id)}
-            >Delete</button>}
+            // deleteButton={<button
+            // onClick={()=>deleteMovie(element.id)}
+            // >Delete</button>}
 
-            editButton={<button 
-            onClick={()=>navigate(`/edit/${element.id}`)}
-            >Edit</button>}
+            deleteButton={
+              <IconButton aria-label="add to favorites"
+              onClick={()=>deleteMovie(element.id)}
+              >
+            <DeleteForeverIcon color="error" sx={{m:0.5}}/>                  
+        </IconButton>
+            }
+
+            // editButton={<button 
+            // onClick={()=>navigate(`/edit/${element.id}`)}
+            // >Edit</button>}
+
+            editButton={
+              <IconButton aria-label="add to favorites"
+              onClick={()=>navigate(`/edit/${element.id}`)}
+              >
+              <EditIcon color="primary" sx={{m:0.5}}/>                  
+          </IconButton>
+            }
             />
         ))
     }
