@@ -30,7 +30,7 @@ useEffect(()=>{
     .then(data=>getMovies())
   }
 
-  console.log(movieList)
+  //console.log(movieList)
 //console.log(cart,movieList)
     return(
 

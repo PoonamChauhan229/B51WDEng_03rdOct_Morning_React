@@ -11,7 +11,7 @@ const getMovieById=()=>{
 }
 
 useEffect(()=>getMovieById(),[])
-console.log(movie)
+//console.log(movie)
 
   return (
     <div>
@@ -37,7 +37,7 @@ const [summary,setSummary]=useState(movie?.summary)
 
 const updateMovie=(id)=>{
     
-    console.log(id)
+   // console.log(id)
     const movie={name,poster,rating,summary}
     // API call
     fetch(`https://65111d14829fa0248e3f850c.mockapi.io/movies/${id}`,{
@@ -47,7 +47,7 @@ const updateMovie=(id)=>{
                 "Content-Type":"application/json"
             }
         }).then(()=>navigate('/'))
-        console.log(movie)
+      //  console.log(movie)
 }
     return(
 

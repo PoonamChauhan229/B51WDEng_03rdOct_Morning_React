@@ -13,6 +13,7 @@ import TicTacToe from './Components/TicTacToeGame/TicTacToe';
 import Theme from './Components/PropDrilling/Theme';
 import ThemeUseContext from './Components/UseContext/ThemeUseContext';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Classprofile from './Components/ClassComponent/ClassProfile';
 
 
 
@@ -34,7 +35,7 @@ const [mode ,setMode]=useState("light")
     {/* display */}
     {/* <Navbar cart={cart}/> */}
     <NavbarMUI cart={cart} mode={mode} setMode={setMode}/>
-  
+
 
     {/* add the functionality */}
     
@@ -53,6 +54,7 @@ const [mode ,setMode]=useState("light")
         <Route path='/tictactoe' element={<TicTacToe/>}/>
         <Route path='/propdrilling' element={<Theme/>}/>
         <Route path='/useContext' element={<ThemeUseContext/>}/>
+        <Route path='/class' element={<Classprofile/>}/>
     </Routes>
     </ThemeProvider>
 

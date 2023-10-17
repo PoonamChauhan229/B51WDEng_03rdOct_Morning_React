@@ -48,7 +48,13 @@ const navigate=useNavigate()
             <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/tictactoe')}>TicTacToe Game</Button>
             <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/propdrilling')}>PropDrilling-Theme</Button>
             <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/useContext')}>UseContext-Theme</Button>
-            
+            <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/class')}>Class-Component</Button>
+
+
+
+
+
+
             <Button  sx={{ color: '#fff' }} onClick={()=>{setMode(mode=="light"?"dark":"light")}}>{mode}Mode</Button>
 
             

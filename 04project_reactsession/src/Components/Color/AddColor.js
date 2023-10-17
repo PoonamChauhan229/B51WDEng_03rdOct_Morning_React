@@ -1,7 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ColorBox from "./ColorBox";
 
 const AddColor=()=>{
+    useEffect(()=>{
+        const timer=setInterval(()=>{
+            console.log("2000")
+        },1000)
+        return ()=>{
+            clearInterval(timer)
+        }
+
+    },[])
+    // const[state.setState]=useState()
     const [colorVal,setColorVal]=useState("green")
     const [colorList,setColorList]=useState([colorVal])
    // console.log(colorList)

@@ -6,7 +6,7 @@ const MovieInfo=()=>{
     //returns an object
     const [movie,setMovie]=useState({})
     const {id}=useParams()
-    console.log(id)
+   // console.log(id)
     //console.log(movieList[id])
     useEffect(()=>getMovieById(),[])
     const {name,summary,trailer}=movie

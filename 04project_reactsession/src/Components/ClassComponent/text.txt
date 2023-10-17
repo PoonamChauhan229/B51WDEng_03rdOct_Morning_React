@@ -1,0 +1,34 @@
+1-Constructor Called
+2-Render Method
+3-Component Did Mount
+
+Constructor is called
+Render is called
+Component Did Mount is called
+
+
+Parent Constructor Called
+Parent Render Method
+Child Constructor Called
+Child Render Method
+Child Component Did Mount
+
+
+Parent Constructor Called
+Parent Render Method
+Child Constructor Called
+Child Render Method
+Parent Component Did Mount
+Child Component Did Mount
+
+Mount => To load something
+
+
+Parent Constructor Called
+Parent Render Method
+Child Constructor Called
+Child Render Method
+Child Component Did Mount
+Parent Component Did Mount
+Child Render Method
+Child Component Did Update
