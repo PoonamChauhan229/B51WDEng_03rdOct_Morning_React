@@ -20,7 +20,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 
-export default function MovieCardMUI({ name, poster, rating, summary ,cart,setCart,id,deleteButton,editButton}) {
+export default function MovieCardMUI({ name, poster, rating, summary ,cart,setCart,id,deleteButton,editButton,AddItem}) {
   const [show,setShow]=useState(false)
   const [btnText,setBtnText]=useState("Add to Cart")  
 
@@ -31,7 +31,7 @@ export default function MovieCardMUI({ name, poster, rating, summary ,cart,setCa
  const navigate=useNavigate()
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 375 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -79,6 +79,9 @@ export default function MovieCardMUI({ name, poster, rating, summary ,cart,setCa
                             
         </IconButton>
 
+        {/* redux store button */}
+
+        {AddItem}
         {/* Summary show Icon */}
         
 

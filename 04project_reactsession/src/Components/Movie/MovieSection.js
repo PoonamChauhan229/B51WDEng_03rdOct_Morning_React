@@ -7,12 +7,15 @@ import MovieCardMUI from "./MovieCardMUI"
 import EditIcon from '@mui/icons-material/Edit';
 import IconButton from '@mui/material/IconButton';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { useDispatch } from "react-redux"
+import { addItem } from "../../utils/cartSlice"
 
 
 
 const MovieSection=({cart,setCart})=>{
  const navigate=useNavigate()
 const [movieList,setMovieList]=useState([])
+const dispatch=useDispatch()
 
 useEffect(()=>{
     getMovies()
@@ -28,6 +31,13 @@ useEffect(()=>{
      console.log(id,"Deleted Suceessfully")
     fetch(`https://65111d14829fa0248e3f850c.mockapi.io/movies/${id}`,{method:"DELETE"})
     .then(data=>getMovies())
+  }
+
+  const handleAddItem=(movie)=>{
+    console.log(movie)
+    //dispath an action
+    //useDispath()
+    dispatch(addItem(movie))
   }
 
   //console.log(movieList)
@@ -67,6 +77,12 @@ useEffect(()=>{
               >
               <EditIcon color="primary" sx={{m:0.5}}/>                  
           </IconButton>
+            }
+
+            AddItem={
+              <button 
+              onClick={()=>handleAddItem(element)}
+              >Add to Store</button>
             }
             />
         ))

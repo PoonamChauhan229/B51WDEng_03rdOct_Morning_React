@@ -14,6 +14,9 @@ import Theme from './Components/PropDrilling/Theme';
 import ThemeUseContext from './Components/UseContext/ThemeUseContext';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Classprofile from './Components/ClassComponent/ClassProfile';
+import { Provider } from 'react-redux';
+import store from './utils/store';
+import CartPage from './Components/Movie/CartPage';
 
 
 
@@ -31,6 +34,7 @@ const [mode ,setMode]=useState("light")
  
   return (    
     <>
+    <Provider store={store}>
      <ThemeProvider theme={darkTheme}>
     {/* display */}
     {/* <Navbar cart={cart}/> */}
@@ -55,9 +59,10 @@ const [mode ,setMode]=useState("light")
         <Route path='/propdrilling' element={<Theme/>}/>
         <Route path='/useContext' element={<ThemeUseContext/>}/>
         <Route path='/class' element={<Classprofile/>}/>
+        <Route path='/cart' element={<CartPage/>}/>
     </Routes>
     </ThemeProvider>
-
+    </Provider>
     </> 
     
   );

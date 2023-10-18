@@ -8,11 +8,16 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 // const navItems = ['Home', 'AddMovie', 'AddColor','Cart'];
 
 function NavbarMUI({cart,mode,setMode}) {
 const navigate=useNavigate()
+//subscribe to the store
+//useSelector
+const cartItems=useSelector(store=>store.cart.items)
+console.log(cartItems)
  return (
     <Box sx={{ display: 'flex',padding:0,marginBottom:10}}>
       <CssBaseline />
@@ -44,11 +49,12 @@ const navigate=useNavigate()
             <Button  sx={{ color: '#fff'}} onClick={()=>navigate('/')}>Home</Button>
             <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/addmovie')}>AddMovie</Button>
             <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/addcolor')}>AddColor</Button>
-            <Button  sx={{ color: '#fff' }}>Cart{cart}</Button>
+            <Button  sx={{ color: '#fff' }}>Cart<span style={{color:"orange",fontSize:"20px"}}><i>{cart}</i></span></Button>
             <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/tictactoe')}>TicTacToe Game</Button>
             <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/propdrilling')}>PropDrilling-Theme</Button>
             <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/useContext')}>UseContext-Theme</Button>
             <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/class')}>Class-Component</Button>
+            <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/cart')}>Redux-Cart {cartItems.length}</Button>
 
 
 
