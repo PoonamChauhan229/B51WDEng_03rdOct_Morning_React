@@ -21,6 +21,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 export default function MovieCardMUI({ name, poster, rating, summary ,cart,setCart,id,deleteButton,editButton,AddItem}) {
+  console.log(name.slice(0,1))
   const [show,setShow]=useState(false)
   const [btnText,setBtnText]=useState("Add to Cart")  
 
@@ -99,9 +100,7 @@ export default function MovieCardMUI({ name, poster, rating, summary ,cart,setCa
         { show &&
         <CardContent>
           <Typography variant="body2" color="text.secondary">
-            This impressive paella is a perfect party dish and a fun meal to cook
-            together with your guests. Add 1 cup of frozen peas along with the mussels,
-            if you like.
+            {summary}
           </Typography>
         </CardContent>
 }

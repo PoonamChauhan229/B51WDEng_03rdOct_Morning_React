@@ -17,6 +17,8 @@ import Classprofile from './Components/ClassComponent/ClassProfile';
 import { Provider } from 'react-redux';
 import store from './utils/store';
 import CartPage from './Components/Movie/CartPage';
+import Formik from './Components/Formik/Formik';
+import AddMovieFormik from './Components/Formik/AddMovieFormik';
 
 
 
@@ -60,6 +62,8 @@ const [mode ,setMode]=useState("light")
         <Route path='/useContext' element={<ThemeUseContext/>}/>
         <Route path='/class' element={<Classprofile/>}/>
         <Route path='/cart' element={<CartPage/>}/>
+        <Route path='/formik' element={<Formik/>}/>
+        <Route path='/addmovieformik' element={<AddMovieFormik/>}/>
     </Routes>
     </ThemeProvider>
     </Provider>

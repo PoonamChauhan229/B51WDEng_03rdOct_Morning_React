@@ -1,0 +1,22 @@
+Form Validation
+
+2 libraries
+-Formik
+-Yup
+npm i formik
+npm i yup
+
+Formik:(componnents and hooks )
+Hepls to build an form 
+=>managing the data
+=>display the errors
+=>form validation
+
+Yup +++advanced validation
+Formik supports yup 
+
+Yup:=> schema for validation
+
+official docs
+https://formik.org/docs/overview
+https://formik.org/docs/api/useFormik

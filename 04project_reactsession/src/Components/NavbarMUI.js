@@ -19,7 +19,7 @@ const navigate=useNavigate()
 const cartItems=useSelector(store=>store.cart.items)
 console.log(cartItems)
  return (
-    <Box sx={{ display: 'flex',padding:0,marginBottom:10}}>
+    <Box sx={{ display: 'flex',padding:0,marginBottom:10,}}>
       <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
@@ -46,15 +46,17 @@ console.log(cartItems)
               </Button>
             ))} */}
 
-            <Button  sx={{ color: '#fff'}} onClick={()=>navigate('/')}>Home</Button>
-            <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/addmovie')}>AddMovie</Button>
-            <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/addcolor')}>AddColor</Button>
-            <Button  sx={{ color: '#fff' }}>Cart<span style={{color:"orange",fontSize:"20px"}}><i>{cart}</i></span></Button>
-            <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/tictactoe')}>TicTacToe Game</Button>
-            <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/propdrilling')}>PropDrilling-Theme</Button>
-            <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/useContext')}>UseContext-Theme</Button>
-            <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/class')}>Class-Component</Button>
-            <Button  sx={{ color: '#fff' }} onClick={()=>navigate('/cart')}>Redux-Cart {cartItems.length}</Button>
+            <Button  sx={{ color: '#fff',fontSize:"11px"}} onClick={()=>navigate('/')}>Home</Button>
+            <Button  sx={{ color: '#fff',fontSize:"11px" }} onClick={()=>navigate('/addmovie')}>AddMovie</Button>
+            <Button  sx={{ color: '#fff',fontSize:"11px" }} onClick={()=>navigate('/addcolor')}>AddColor</Button>
+            <Button  sx={{ color: '#fff',fontSize:"11px" }}>Cart<span style={{color:"orange",fontSize:"20px"}}><i>{cart}</i></span></Button>
+            <Button  sx={{ color: '#fff',fontSize:"11px" }} onClick={()=>navigate('/tictactoe')}>TicTacToe Game</Button>
+            <Button  sx={{ color: '#fff',fontSize:"11px" }} onClick={()=>navigate('/propdrilling')}>PropDrilling-Theme</Button>
+            <Button  sx={{ color: '#fff',fontSize:"11px" }} onClick={()=>navigate('/useContext')}>UseContext-Theme</Button>
+            <Button  sx={{ color: '#fff',fontSize:"11px" }} onClick={()=>navigate('/class')}>Class-Component</Button>
+            <Button  sx={{ color: '#fff',fontSize:"11px" }} onClick={()=>navigate('/cart')}>Redux-Cart {cartItems.length}</Button>
+            <Button  sx={{ color: '#fff',fontSize:"11px" }} onClick={()=>navigate('/formik')}>Formik</Button>
+            <Button  sx={{ color: '#fff',fontSize:"11px" }} onClick={()=>navigate('/addmovieformik')}>AddMovie-Formik</Button>
 
 
 
