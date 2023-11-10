@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Gamebox = ({element,playerClick,id}) => {
-console.log(element)
+// console.log(element)
   return (
     <div className='gamebox'
     onClick={()=>playerClick()}    

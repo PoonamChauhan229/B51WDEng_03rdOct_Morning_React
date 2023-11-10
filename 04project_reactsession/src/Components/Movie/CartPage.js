@@ -5,7 +5,7 @@ import { clearCart, clearLastItem} from '../../utils/cartSlice'
 
 const CartPage = () => {
     const cartItems=useSelector(store=>store.cart.items)
-    console.log(cartItems)
+    // console.log(cartItems)
 
     const dispatch=useDispatch()
     const ClearCartAll=()=>{
@@ -28,8 +28,8 @@ const CartPage = () => {
     <div style={{marginTop:"60px",display:"flex",flexWrap:"wrap",gap:"10px"}}>
         
         {
-            cartItems.map((element)=>(
-                <MovieCardMUI {...element}/>
+            cartItems.map((element,index)=>(
+                <MovieCardMUI {...element} key={index}/>
             ))
         }
         

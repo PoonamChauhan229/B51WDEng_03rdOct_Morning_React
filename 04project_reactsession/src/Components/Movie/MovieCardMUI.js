@@ -21,7 +21,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 export default function MovieCardMUI({ name, poster, rating, summary ,cart,setCart,id,deleteButton,editButton,AddItem}) {
-  console.log(name.slice(0,1))
+  // console.log(id)
+  //console.log(name.slice(0,1))
   const [show,setShow]=useState(false)
   const [btnText,setBtnText]=useState("Add to Cart")  
 

@@ -4,6 +4,8 @@ import Button from '@mui/material/Button';
 import { useFormik } from 'formik';
 import * as yup from 'yup'
 import TextField from '@mui/material/TextField';
+import { url } from "../../utils/constants";
+
 
 
 const AddMovieFormik=()=>{
@@ -11,14 +13,16 @@ const AddMovieFormik=()=>{
        name:yup.string().required("Fill the correct feild?"),
        poster:yup.string().required("Fill the correct feild?"),
        rating:yup.number().required("Fill the correct feild?").min(1).max(10),
-       summary:yup.string().required("Fill the correct feild?")
+       summary:yup.string().required("Fill the correct feild?"),
+       trailer:yup.string().required("Fill the correct feild?")
       })
     const formik=useFormik({
         initialValues:{
           name:"",
           poster:"",
           rating:"",
-          summary:""
+          summary:"",
+          trailer:""
         },       
         validationSchema:formValidationSchema,
         onSubmit:(newMovie)=>{
@@ -32,7 +36,8 @@ const AddMovieFormik=()=>{
     const addToMovieList=(movie)=>{
         console.log(movie)
         // API call
-        fetch(`https://65111d14829fa0248e3f850c.mockapi.io/movies`,{
+            fetch(url,{
+            
             method:"POST",
             body:JSON.stringify(movie),
             headers:{
@@ -95,6 +100,19 @@ const AddMovieFormik=()=>{
             onBlur={formik.handleBlur}
         />
         {formik.touched.summary && formik.errors.summary? formik.errors.summary:""}
+        </div>
+
+        <div style={{margin:"0px 30px 0px 30px"}}>
+            <TextField
+            sx={{width:"50%"}}
+            id="trailer"
+            label="Trailer"          
+            variant="standard"
+            value={formik.values.trailer} name="trailer"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+        />
+        {formik.touched.trailer && formik.errors.trailer? formik.errors.trailer:""}
         </div>
         
         <div style={{margin:"5px 30px 0px 30px"}}>

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { url } from '../../utils/constants'
 
 const EditForm = () => {
 const {id}=useParams()
+console.log(id)
 const [movie,setMovie]=useState(null)
 const getMovieById=()=>{
-    fetch(`https://65111d14829fa0248e3f850c.mockapi.io/movies/${id}`)
+    fetch(`${url}/${id}`)
     .then(data=>data.json())
     .then(res=>setMovie(res))
 }
@@ -36,11 +38,12 @@ const [rating,setRating]=useState(movie?.rating)
 const [summary,setSummary]=useState(movie?.summary)
 
 const updateMovie=(id)=>{
-    
+    console.log(id)
    // console.log(id)
     const movie={name,poster,rating,summary}
+    console.log(movie)
     // API call
-    fetch(`https://65111d14829fa0248e3f850c.mockapi.io/movies/${id}`,{
+    fetch(`${url}/${id}`,{
             method:"PUT",
             body:JSON.stringify(movie),
             headers:{

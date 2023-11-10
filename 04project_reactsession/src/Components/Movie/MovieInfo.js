@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from 'axios'
+import { url } from "../../utils/constants";
 
 const MovieInfo=()=>{
     //returns an object
@@ -13,7 +14,7 @@ const MovieInfo=()=>{
 
     // Fetch 
     // const getMovieById=()=>{
-    //   fetch(`https://65111d14829fa0248e3f850c.mockapi.io/movies/${id}`)
+    //   fetch(`${url}/${id}`)
     //   .then((data)=>data.json())
     //   .then((res)=> setMovie(res))
     // }
@@ -21,7 +22,7 @@ const MovieInfo=()=>{
     // Axios
     async function getMovieById() {
       try {
-        const response = await axios.get(`https://65111d14829fa0248e3f850c.mockapi.io/movies/${id}`);
+        const response = await axios.get(`${url}/${id}`);
         console.log(response.data);
         setMovie(response.data)
       } catch (error) {

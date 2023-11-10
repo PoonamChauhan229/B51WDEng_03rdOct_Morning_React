@@ -55,7 +55,7 @@ const Board = ({boardVal,setBoardVal}) => {
     {winner && <Confetti width={width}height={height} gravity={0.02}/>}
     <div className='board'>
        
-       {boardVal.map((element,index)=><Gamebox element={element} id={index}
+       {boardVal.map((element,index)=><Gamebox element={element} id={index} key={index}
        playerClick={()=>handleClick(index)}
 
        /> )}

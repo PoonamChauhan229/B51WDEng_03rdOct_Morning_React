@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Button from '@mui/material/Button';
+import { url } from "../../utils/constants";
 
 
 const AddMovie=({movieList,setMovieList})=>{
@@ -14,7 +15,8 @@ const AddMovie=({movieList,setMovieList})=>{
         const movie={poster,name,rating,summary}
         console.log(movie)
         // API call
-        fetch(`https://65111d14829fa0248e3f850c.mockapi.io/movies`,{
+            fetch(url,{
+
             method:"POST",
             body:JSON.stringify(movie),
             headers:{

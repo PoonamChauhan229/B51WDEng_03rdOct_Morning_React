@@ -7,7 +7,7 @@ const Button = ({value}) => {
     background:mode=="light"?"green":"navy",
     color:mode=="light"?"white":"white"
   }
-  console.log(mode)
+  // console.log(mode)
   return (
     <div>
       <button

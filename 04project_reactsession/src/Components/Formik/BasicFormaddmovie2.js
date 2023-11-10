@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import { useFormik } from 'formik';
 import * as yup from 'yup'
 import TextField from '@mui/material/TextField';
+import { url } from "../../utils/constants";
 
 
 const AddMovieFormik=()=>{
@@ -32,7 +33,7 @@ const AddMovieFormik=()=>{
     const addToMovieList=(movie)=>{
         console.log(movie)
         // API call
-        fetch(`https://65111d14829fa0248e3f850c.mockapi.io/movies`,{
+        fetch(url,{
             method:"POST",
             body:JSON.stringify(movie),
             headers:{

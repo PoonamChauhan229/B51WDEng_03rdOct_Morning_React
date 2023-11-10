@@ -65,3 +65,10 @@ export const movie=[
   "trailer": "https://www.youtube.com/embed/NgsQ8mVkN8w"
   }
   ]
+
+// nodejs
+export const url=`https://b51wdeng-nodejs-movie-project.onrender.com/movies`
+
+// mock Api
+
+// export const url=`https://65111d14829fa0248e3f850c.mockapi.io/movies`

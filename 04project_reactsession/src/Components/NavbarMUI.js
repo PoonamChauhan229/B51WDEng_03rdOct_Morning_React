@@ -17,7 +17,7 @@ const navigate=useNavigate()
 //subscribe to the store
 //useSelector
 const cartItems=useSelector(store=>store.cart.items)
-console.log(cartItems)
+//console.log(cartItems)
  return (
     <Box sx={{ display: 'flex',padding:0,marginBottom:10,}}>
       <CssBaseline />

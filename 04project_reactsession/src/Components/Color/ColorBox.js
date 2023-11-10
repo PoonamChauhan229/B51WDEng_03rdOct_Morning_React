@@ -1,5 +1,5 @@
 const ColorBox=({color})=>{
-    console.log(color)
+    // console.log(color)
     const divStyle={
         height:"20px",
         width:"258px",
